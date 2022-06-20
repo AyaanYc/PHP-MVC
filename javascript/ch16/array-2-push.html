@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //모두 파괴형(원본을 건듬)
+        //push 맨 마지막에 값 한개 추가 return값은 length값
+        const arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        console.log(arr.toString());
+        console.log(arr.push(100));
+        console.log(arr.join());
+
+        //unshift 맨 처음에 값 한개 추가 return값은 length값
+        arr.unshift(90);
+        console.log(arr.toString());
+
+        //pop 맨 끝에 값한개 삭제 return값은 삭제한값
+        const result = arr.pop();
+        console.log('result : '+ result);
+        console.log(arr.toString());
+
+        //shift 맨 처음에 값 한개 삭제 return값은 삭제한값
+        const result2 = arr.shift();
+        console.log('result : '+ result2);
+        console.log(arr.toString());
+    </script>
+</body>
+</html>

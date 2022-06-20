@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+        function elt(name, attr) {
+            const node = document.createElement(name);
+            if(attr) {
+                for(const item in attr) {
+                    if(attr.hasOwnProperty(item)) {
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+
+        function createIconEditor(parent, nx, ny) {
+            const cells = [];
+            //color input 
+            const inputColor = elt('input', {type: 'color'});
+            parent.appendChild(inputColor);
+
+            //All Clear button
+            const btnAllClear = elt('input', {type:'button', value:'All Clear'});
+            btnAllClear.addEventListener('click', function(e) {
+                /*
+                const tdList = document.querySelectorAll('td');                
+                tdList.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+                */
+               cells.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+            });
+            parent.appendChild(btnAllClear);
+
+            //table
+            const table = elt('table');
+            parent.appendChild(table);
+
+            table.style.borderCollapse = 'collapse';
+            table.style.marginTop = '10px';
+
+            for(let i=0; i<ny; i++) {
+                const tr = elt('tr');
+                table.appendChild(tr);
+
+                for(let z=0; z<nx; z++) {                    
+                    const td = elt('td');   
+                    cells.push(td);                 
+                    tr.appendChild(td);
+
+                    td.style.width = td.style.height = '15px';
+                    td.style.border = '1px solid #000';                    
+
+                    td.addEventListener('click', function(e) {
+                        if(e.target.style.backgroundColor === '' || e.target.color16 !== inputColor.value) {
+                            e.target.style.backgroundColor = inputColor.value;
+                            e.target.color16 = inputColor.value;
+                        } else { 
+                            e.target.style.backgroundColor = '';
+                        }
+                    });
+                }
+            }
+        }
+        //원래 죽어야하는데 내부함수(콜백)에서 사용하면 남아서 연결되어있는것 = 클로져
+        //함수호출이 끝나거나 FOR문이 다 돌아간 상황 엔 변수가 죽는다.
+        createIconEditor(document.body, 10, 5);
+    </script>
+</body>
+</html>

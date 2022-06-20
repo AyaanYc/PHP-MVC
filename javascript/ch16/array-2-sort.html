@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정렬 이건 그냥암기
+        const arr = [6, 2, 33, 9, 5, 3, 1, 7, 14, 22];
+
+        //오름차순
+        arr.sort(function(a, b) { 
+            // if(a < b) return -1;
+            return a - b; 
+        });
+        console.log(arr.toString());
+
+        //내림차순
+        arr.sort(function(a, b) { 
+            // if(a > b) return -1;
+            return b - a;
+        });
+        console.log(arr.toString());
+    </script>
+</body>
+</html>

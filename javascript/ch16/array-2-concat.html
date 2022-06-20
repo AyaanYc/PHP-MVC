@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //concat(속성)은 배열합치기 값을 연결해줌
+        const arr = ['A', 'B', 'C'];
+        const arr2 = arr.concat(['D', 'E']);
+        console.log(arr2);
+        console.log(arr);
+        console.log(['D', 'E'].concat(arr));
+        const arr4 = [...arr, ...arr2]; //이것도가능
+        console.log(arr4);
+    </script>
+</body>
+</html>

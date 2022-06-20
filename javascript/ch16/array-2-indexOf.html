@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //값에 해당하는 방의번호(왼쪽부터 먼저찾음)
+        //lastIndexOf는 오른쪽부터 찾음 번호는 왼쪽부터센다.
+        //문자열에서 해당값 찾는것도 가능(includes=true,false값이나옴)
+        //결과값이 -1이 나오면 해당하는 값이 없음.
+        const arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        const idx = arr.indexOf(3);
+        console.log(idx);
+
+        const lastIdx = arr.lastIndexOf(3);
+        console.log(lastIdx);
+
+        const fileNm = 'abcdef.fff.jpg';
+        const lastDotIdx = fileNm.lastIndexOf('.');
+        console.log('lastDotIdx : ' + lastDotIdx);
+
+    </script>
+</body>
+</html>

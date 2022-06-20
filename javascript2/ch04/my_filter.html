@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_map</title>
+</head>
+<body>
+    <script>
+        const myArr = {
+            '0': 10,
+            '1': 43,
+            '2': 22,
+            '3': 38,
+            '4': 17,
+            '5': 56,
+            '6': 47,
+            'length': 7,
+            'forEach': function(cb) {
+                for(let i=0; i<this.length; i++) {
+                    cb(this[i], i);
+                }
+            },
+            'map': function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++){
+                    tempArr.push(cb(this[i], i));
+                }
+                return tempArr;
+            },
+            'filter': function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++) {
+                    const fe = cb(this[i], i);
+                    if(fe){
+                        tempArr.push(this[i]);
+                    }
+                }
+                return tempArr;
+            }
+        }
+        //---------------------- forEach 예제 forEach는 return 값을 받지 못한다.
+        console.log('----make forEach-----')
+        const temp = [];
+        myArr.forEach(function(item, idx) {
+            console.log(`arr[${idx}] : ${item}`);
+            temp.push(item);
+        });
+
+        console.log('--------forEach로 map만들기-----------')
+        console.log(temp.toString());
+
+        //------------------------- map 예제
+        console.log('----make map-----')
+        const arr2 = myArr.map(function(item) {
+            return item + 3;
+        });
+        console.log(arr2.toString());
+        //myArr에 4번째 값 이후로 값을들 *2 한 새로운 배열을 만든다.
+        console.log('------map idx 활용하기------');
+        console.log(myArr);
+        const arr3 = myArr.map(function(item,idx){
+            return idx > 3 ? item*2 : item;
+        });
+        console.log(arr3);
+
+        //------------- filter 예제
+        console.log('------filter 활용하기------');
+        const arr4 = myArr.filter(function(item, idx){
+            return item%2===0;
+        });
+        console.log(arr4.toString());
+
+        //정규표현식
+        console.log('---정규표현식------')
+        let pattern = /(\w+)\s(\w+)/;
+        let str = "coding everyabody";
+        let result = str.replace(pattern, "$2, $1");
+        console.log(result);
+    </script>
+</body>
+</html>

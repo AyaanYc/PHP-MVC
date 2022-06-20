@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //비동기, 스레드가 1개만 있다고 가정.
+        //기다리지않고 백그라운드(이벤트루프)에서 실행시켜놓고 지나감 빠른다중일처리가능?
+        console.log('A');
+        console.log('B');
+        console.log('C');
+        console.log('D');
+        console.log('----------');
+        setTimeout(function(){
+            console.log('A');
+        }, 3000);
+        setTimeout(function(){
+            console.log('B');
+        }, 2500);
+        setTimeout(function(){
+            console.log('C');
+        }, 2000);
+
+    </script>
+</body>
+</html>

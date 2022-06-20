@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main > img { width: 358px; height: 447px;}
+        #sub { width: 358px; height: 100px; display: flex;}
+        #sub > img:hover { cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img id='dog' src="img/img1.jpg">
+    </div>
+    <div id="sub">
+        <img onclick="change('img/img1.jpg');" src="img/img1.jpg">
+        <img onclick="change('img/img2.jpg');" src="img/img2.jpg">
+        <img onclick="change('img/img3.jpg');" src="img/img3.jpg">
+    </div>
+    <script>
+        function change(img) {
+            let dog = document.querySelector('#dog');
+            // dog.setAttribute = ('src', `${img}`);
+            dog.src = img;
+        }
+        // let dogImg = document.querySelectorAll('#sub > img');
+        // dogImg.forEach(item => {
+        //     item.addEventListener('onclick', ())
+        // })
+    </script>
+</body>
+</html>

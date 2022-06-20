@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail-1-result</title>
+    <style>
+        img {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #desc { display: none; }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg" >
+    <button class="over" onclick="showDetail();">상세 설명 보기</button>
+    <div id="desc" class="detail">
+        <h3>제목</h3>
+        <p>설명~~~~</p>
+        <button id="close" onclick="hideDetail();">상세 설명 닫기</button>
+    </div>
+    <script>
+        const descDiv = document.querySelector('#desc');
+        
+        function showDetail() {
+            descDiv.style.display = 'block';
+        }
+
+        function hideDetail() {
+            descDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail-1-result copy</title>
+    <style>
+        img {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #desc { display: none; }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg" >
+    <button class="over" onclick="flagDisplay('block');" >상세 설명 보기</button>
+    <div class="detail" id="desc">
+        <h3>제목</h3>
+        <p>설명~~~~</p>
+        <button id="close" onclick="flagDisplay('none');">상세 설명 닫기</button>
+    </div>
+    <script>
+        const descDiv = document.querySelector('#desc');
+        function flagDisplay(display) {
+            descDiv.style.display = display;
+        }
+    </script>
+</body>
+</html>

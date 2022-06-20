@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //에러가 발생되면 그부분의 에러를 e파라미터로 받아서 표출하고 그다음 코드들도 실행시킴
+        try {
+            console.log('AAAAAA');
+            const result = new Array(-1);
+            console.log('BBBBB');
+        } catch(e) {
+            console.error('catch : ' + e.name);
+        }
+        console.log('(1) try_catch 끝');
+
+        console.log('------------------');
+        try {
+            console.log('AAAAAA');
+            console.log('BBBBBB');
+            console.log('CCCCCC');
+        } catch(e) {
+            console.error(e.name); //실행안됨
+        }
+
+        console.log('(2) try_catch 끝');
+
+        console.log('------------------');
+
+        try {
+            console.log('AAAAAA');
+            const result = new Array(-1);
+            console.log('BBBBB');
+        } catch(e) {
+            console.error('catch : ' + e.name);
+        } finally {
+            console.log('무조건 실행 됨!');
+        }
+        console.log('(3) try_catch 끝');
+        console.log('------------------');
+
+    </script>
+</body>
+</html>

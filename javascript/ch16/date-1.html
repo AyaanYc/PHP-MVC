@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const now = new Date();
+        console.log(now);
+        const date1 = new Date('2020-05-30 01:00:20');//시간지정가능
+        console.log(date1);
+        console.dir(now);
+
+        date1.setFullYear(2021);
+
+        console.log(date1.getFullYear());//연도만 추출
+        console.log(date1.getMonth() + 1);//배열때문에 0에서 11사이의 값이 나오기 때문에 +1을 해줘야됨
+        console.log(date1.getDay());//일월화수목금토 => 배열번호로 표시 
+        console.log(now.getTime());//1970년 1월1일 자정이후의 시간을 밀리초로 표시 1/1000초
+        console.log(now.getHours());//시간을 0~23
+        console.log(now.getMinutes());// 0~59 분
+        console.log(now.getSeconds());// 0~59 초
+        console.log(now.getMilliseconds());//0~999사이의 숫자로 밀리초를 표시
+</script>
+</body>
+</html>

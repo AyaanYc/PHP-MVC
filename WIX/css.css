@@ -1,0 +1,318 @@
+@font-face {
+    font-family: 'GimpoGothicBold00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimpoGothicBold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GimpoGothicRegular00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/GimpoGothicRegular00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*폰트 */
+:root {
+	--one-color: #f05334;
+}
+.scroll-top {
+	z-index: 100;
+	height: 60px;
+	width: 60px;
+	background-color: white;
+	position: fixed;
+	bottom: 15px;
+	right: 25px;
+	cursor: pointer;
+	border-radius: 6px;
+	box-shadow: 0px 0px 20px #ee78092f;
+	transform: scale(0.9);
+	transition: 0.3s ease-in-out transform;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+.scroll-top svg {
+	width: 50%;
+	color: var(--one-color);
+	pointer-events: none;
+}
+
+.scroll-top:hover {
+	transform: scale(1);
+}
+/* scroll Top Button */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.container{
+    position:relative;
+    overflow: hidden;
+}
+.container .img{
+    animation: box-ani 5s ease;
+    filter: brightness(90%);
+}
+@keyframes box-ani { 
+    from{ 
+    transform: scale(1.2, 1.2);
+} 
+}
+.container .img img{
+    width:100%;
+    height:100vh;
+}
+header{
+    position:absolute;
+    top: 0;
+    left:0;
+    font-size:30px; 
+    border-bottom: 1px solid #fff; 
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-box{
+    width:80%;
+    height:80px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'GimpoGothicRegular00';
+}
+.header-box a{
+    color: white;
+}
+.logo{
+    position: relative;
+}
+.logo h1{
+    font-size:50px;
+    padding-top: 10px;
+}
+#round{
+    position: absolute;
+    right:-10%;
+    top:12%;
+    background:var(--one-color);
+    width: 13px;
+    height: 13px;
+    border-radius: 10px;
+    animation: blink-effect 1s step-end infinite;
+}
+@keyframes blink-effect { 
+    50% { opacity: 0; } 
+}
+.nav ul{
+    display:flex;
+    
+}
+.nav li{
+    padding-top:5px;
+}
+.nav ul li:not(:last-child){
+    margin-right: 150px;
+}
+.nav a:after{
+    display:block;
+    width:100%;
+    content: '';
+    border-bottom: solid 3px var(--one-color);
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out; 
+}
+.nav a:hover:after{
+    transform: scaleX(1);
+}
+.nav a:hover{
+    color:var(--one-color);
+}
+.join span{
+    background-color: var(--one-color);
+    padding: 15px 18px;
+    font-size:16px;
+    font-weight:500;
+    border-radius: 19px;
+    border: 1px solid var(--one-color);
+}
+.join span:not(:last-child){
+    margin-right: 10px;
+}
+.join span:hover{
+    background-color: #ee6c52;
+    border:1px solid #ee6c52;
+}
+.content{
+    position:absolute;
+    bottom:10%;
+    left:0;
+    padding-left: 10%;
+}
+.content p{
+    color:white;
+}
+.content .detail{
+    font-size:5vh;
+    font-weight: 500;
+    padding-bottom:25px;
+    font-family: 'GimpoGothicRegular00';
+}
+.content p:nth-child(1){
+    font-family: 'GimpoGothicBold00';
+    font-size: 12vh;
+}
+.content p:last-child{
+    font-size:2.5vh;
+    width:16%;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+.content p:last-child a{
+    position:relative;
+    right:10px;
+}
+.content a{
+    color: #fff;
+}
+.content p img{
+    width:18px;
+    position:relative;
+    left: 15%;
+}
+.content p:last-child:hover{
+    background-color:#61922b;
+    border: 1px solid #61922b;
+}
+.content .det{
+    animation: move 3s infinite;
+}
+@keyframes move{
+    from {
+        transform:translateY(0px);
+    }
+    50%{ 
+        transform:translateY(-20px);
+    }
+    to{
+        transform:translateY(0px);
+    }
+}
+.content .detail{
+    animation: fadein 1s ease-in-out;
+}
+.content .de{
+    animation: fadein 1s ease-in-out;
+}
+.content .de img{
+    position: relative;
+    top:px;
+}
+@keyframes fadein{
+    from{
+        opacity: 0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:3;
+        transform:none;
+    }
+}
+.page{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.pg{
+    width: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pg h1{
+    text-align:center;
+    font-size:8vh;
+    font-weight:bold;
+    padding: 10rem 0;
+    color:#333333;
+    font-family: 'GimpoGothicBold00';
+}
+.text1::before {
+	content: attr(data-outline);
+	position: absolute;
+	left:37.5%;
+	top:6.5%;
+	color: transparent;
+	-webkit-text-stroke: 2px #ed85242f;
+	z-index: -1;
+}
+.food{
+    float: left;
+}
+.food p{
+    color: #333333;
+}
+.food img{
+    width:500px;
+    height:500px;
+}
+.fd1, .fd2, .fd3{
+    width:1300px;
+    height:500px;
+    margin-bottom:8rem;
+}
+.fd1 img, .fd3 img{
+    float:left;
+    margin-right:15px;
+}
+.fd2 img{
+    float:right;
+    margin-left:15px;
+}
+.left p:first-child, .right p:first-child{
+    font-size:7vh;
+    font-family: 'GimpoGothicBold00';
+}
+.left p:last-child, .right p:last-child{
+    font-size:2vh;
+    font-family: 'GimpoGothicRegular00';
+}
+.food .right p{
+    text-align:right;
+}
+.board{
+    height:1000px;
+    background-color:burlywood;
+    text-align: center;
+    font-size: 5vh;
+    padding: 8rem 0;
+}
+.fd1, .fd2, .fd3{
+    position: relative;
+    animation: fadeInLeft 3s;
+}
+@keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            transform: translate3d(-100%, 0, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+}
+.footer{
+    height:250px;
+    background-color:rgb(188, 240, 191);
+    text-align: center;
+    font-size: 3vh;
+    padding: 5rem 0;
+}

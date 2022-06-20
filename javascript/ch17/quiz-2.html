@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='number'] { width: 50px; }
+        table { border-collapse: collapse; margin: 10px;}
+        table, td { border: 1px solid black; padding: 10px;}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" id="rowNum">행
+        <input type="number" id="colNum">열
+        <button>작성</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        const button = document.querySelector('button');
+        const row = document.querySelector('#rowNum');
+        const col = document.querySelector('#colNum');
+        const result = document.querySelector('#result');
+        button.onclick = function() {
+            const rowNum = row.value;
+            const colNum = col.value;
+            const table = document.createElement('table');
+            result.innerHTML = '';
+            result.appendChild(table);
+
+            for(let i=0; i<rowNum; i++) {
+                const tr = document.createElement('tr');
+                table.appendChild(tr);
+                for(let z=0; z<colNum; z++) {
+                    const td = document.createElement('td');
+                    tr.appendChild(td);
+                    td.innerText = i + ", " + z;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

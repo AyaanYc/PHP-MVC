@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1번째자리 호출시 then실행
+        //2번째자리 호출시 catch실행
+        function pMethod(resolve, reject){
+            resolve('1111');
+        }
+        const p1 = new Promise(pMethod);
+
+        //정상상황일때
+        function resolveMethod(result) {
+            console.log(`resolveMethod : ${result}`);
+        }
+        //예외상황일때
+        function catcheMethod(result) {
+            console.log(`catcheMethod : ${result}`);
+        }
+
+        p1.then(resolveMethod);//예외없이 원하는데로되면 then호출
+        p1.catch(catcheMethod);//통신이 잘안되거나 에러가터지면 catch호출
+    </script>
+    <!--  -->
+</body>
+</html>

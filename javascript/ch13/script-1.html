@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+</head>
+<body>
+    <h1 id="heading" class="heading">자바스크립트</h1>
+    <p id="text" class="heading" onclick="changeColor(this);">위 텍스트를 클릭해 보세요.</p>
+    <script>
+
+        function changeColor(a) {
+            a.style.color = 'red';
+        }
+        var heading = document.querySelector('#heading');
+        heading.style.color = 'blue';
+        //var heading = document.getElementById('heading');
+        //var headingClassArr = document.getElementsByClassName('heading');
+        
+        heading.onclick = function() {
+            this.style.color = 'red';
+            console.log(heading.style.color);
+        } 
+        heading.onclick = function() {
+            this.style.backgroundColor = 'pink';
+            console.log(heading.style.color);
+        } 
+        heading.addEventListener('click', function() {
+            alert('클릭됐다.');
+        });
+        heading.addEventListener('click', function() {
+            alert('clicked');
+        });
+
+
+        console.log(heading.style.color);
+    </script>
+</body>
+</html>

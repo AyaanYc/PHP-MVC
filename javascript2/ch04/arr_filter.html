@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr_filter</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 43, 22, 38, 17, 56, 47];
+        const arr2 = arr.filter(function(item, idx) {
+            return item % 2 === 0;
+        });
+        console.log(arr.toString());
+        console.log(arr2.toString());
+        //키값이 홀수인경우만 표시(filter)
+        const arr3 = arr.filter(function(item, idx){
+            if(idx%2===0){
+                return true;//item을해도되고 1을해도되고 false만 아니면됨
+            }
+        });
+        console.log(arr3.toString());
+
+        //키값이 홀수인경우만 표시(map)
+        const arr4 = arr.map(function(item, idx){
+            if(idx%2===0){
+                return item;
+            }
+        });
+        console.log(arr4.toString());
+
+    </script>
+</body>
+</html>

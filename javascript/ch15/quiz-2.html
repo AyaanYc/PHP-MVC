@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-2</title>
+</head>
+<body>
+    <script>
+        //숫자를 알림창에 표시하는 함수를작성후 실행
+        // 만약 같은값이면 숫자가 같습니다.
+        // 다르면 x가 y보다 큽니다.
+
+        
+    (function() {
+        const n1 = prompt('비교할 첫 번재 숫자 :');
+        const n2 = prompt('비교할 두 번째 숫자 :');
+
+        if(isNaN(n1) || isNaN(n2)) {
+        alert('숫자를 입력해주세요');
+        return;
+        }
+
+        function compare(x, y) {
+            if(x > y) {
+                alert(x + '(이)가 ' + y + '보다 큽니다. ');
+            } else if(x === y) {
+                alert("숫자가 같습니다.");
+            } else {
+                alert(y + '(이)가 ' + x + '보다 큽니다. ')
+            }
+        }   
+        compare(n1,n2);
+    })();
+    
+
+    </script>
+</body>
+</html>

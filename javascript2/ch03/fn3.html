@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(n1, n2) {
+            console.log(arguments);//유사배열
+            // return n1 + n2;
+            return arguments[0] + arguments[1] + arguments[2];
+        }
+
+        function sum2() {
+            let num = 0;
+            for(i=0; i<arguments.length; i++){
+                num += arguments[i];
+            }
+            /*
+            Array.prototype.forEach.call(arguments. function(item) {
+                sum += item;
+            });
+            */
+            return num;
+        }
+        console.log(sum2(1, 2, 3, 4));
+        console.log(sum2(10, 20, 30, 40, 50, 60));
+        console.log(sum());
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_map</title>
+</head>
+<body>
+    <script>
+        const myArr = {
+            '0': 10,
+            '1': 43,
+            '2': 22,
+            '3': 38,
+            '4': 17,
+            '5': 56,
+            '6': 47,
+            'length': 7,
+            'forEach': function(cb) {
+                for(let i=0; i<this.length; i++) {
+                    cb(this[i], i);
+                }
+            },
+            'map': function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++){
+                    tempArr.push(cb(this[i], i));
+                }
+                return tempArr;
+            },
+            'filter': function(cb) {
+                const tempArr = [];
+                for(let i=0; i<this.length; i++) {
+                    const fe = cb(this[i], i);
+                    if(fe){
+                        tempArr.push(this[i]);
+                    }
+                }
+                return tempArr;
+            },
+            'toString': function() {
+                let result = '[';
+                for(let i=0; i<this.length; i++) {
+                    result += i!==0 ? ", "+this[i] : this[i];
+                }
+                return result + ']';
+            }
+            
+        }
+        const arr4 = myArr.filter(function(item, idx){
+            return item%2===0;
+        });
+        console.log(arr4.toString());
+
+        console.log(myArr.toString());
+
+    </script>
+</body>
+</html>
+<!--                     result += this[i];
+                    if(i<this.length-1){
+                        result += ", ";
+                    } -->

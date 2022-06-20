@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time { font-size: xx-large; font-weight: bold; color: blue;}
+    </style>
+</head>
+<body>
+    <div class="div">현재 시각 </div>
+    <script>
+        
+        const div = document.querySelector('.div');
+        const span = document.createElement('span');
+        span.classList.add('time')
+        setInterval(function () {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            span.innerHTML = timeString;
+            div.append(span);
+        }, 1000);
+    </script>
+</body>
+</html>

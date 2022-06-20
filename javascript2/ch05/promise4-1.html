@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1() {
+            return new Promise(function(resolve) {
+                resolve(10);
+            });
+        }
+
+        //통신작업은 항상 promise를통해 resolve로 사용해야한다.
+        function fn2(val) {
+            setTimeout(function(resolve){
+                resolve(val * 2);
+            }, 2000);
+        }
+
+        //fn2에 promise객체생성을 하지않고 사용하면 기다려주지않고 바로넘어가기 때문에 undefind가 뜬다.
+        const result = fn2(10);
+        console.log(result);
+    </script>
+</body>
+</html>

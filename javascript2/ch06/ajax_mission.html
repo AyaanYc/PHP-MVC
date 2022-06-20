@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        ul { list-style:  none; }
+        #container { max-width: 1600px; margin: 0 auto; padding: 30px; background-color: #f5f5f5; }
+        .listing-card { 
+            width: 100%; 
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .listing-card li {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            
+         }
+         .listing-card li .img { padding-top: 70%; background-size: cover; background-repeat: no-repeat; }
+         .info {
+             background-color: white;
+         }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <ul id="list" class="listing-card">
+            </ul>
+        <button onclick="getData();">데이터 가져오기</button>
+    </div>
+
+    <script>
+        let page = 1;
+        const ulList = document.querySelector('#list');
+        const img = document.querySelector('.img');
+        const li = document.querySelector('#list > li');
+        function getData(){
+            console.log(`page : ${page}`);
+            const url = `https://picsum.photos/v2/list?limit=10&page=${page++}`;
+            console.log(fetch(url));
+            fetch(url).then(function(res){//fetch(url)은 promise객체에 담아서 
+                return res.json();// .json()=json형식으로 변환하여 promise객체로 반환
+            }).then(function(data) {
+                makeList(data)
+            });
+        }
+
+        //컨트롤타워역할
+        function makeList(data) {
+            data.forEach(function(item) {
+                const list = makeImg(item);
+                ulList.appendChild(list);
+            });
+        }
+
+        //이미지태그만들어서 src에 url넣어줌
+        // function makeImg(item) {
+        //     const li = document.createElement('li');
+        //     const back_img = document.createElement('div');
+        //     const info = document.createElement('div');
+        //     const strong = document.createElement('strong');
+        //     back_img.classList.add('img');
+        //     info.classList.add('info');
+        //     strong.classList.add('author');
+        //     li.appendChild(back_img);
+        //     li.appendChild(info);
+        //     info.appendChild(strong);
+            
+        //     const width = parseInt(item.width*0.1);
+        //     const height = parseInt(item.height*0.1);
+        //     const id = item.id;
+        //     const url = `https://picsum.photos/id/${id}/${width}/${height}`;
+        //     back_img.style.backgroundImage=`url(${url})`;
+        //     strong.innerHTML = item.author;           
+        //     return li;
+        // }
+
+        function makeImg(item) {
+            const width = parseInt(item.width*0.1);
+            const height = parseInt(item.height*0.1);
+            const url = `https://picsum.photos/id/${item.id}/${width}/${height}`;
+
+            const li = document.createElement('li');
+            li.innerHTML = `<div class='img' style='background-image: url(${url})'><div>
+                            <div class='info'><strong>${item.author}</strong></div>`;
+            return li;
+        }
+    </script>
+</body>
+</html>

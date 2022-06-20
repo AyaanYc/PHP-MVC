@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math.PI);
+        console.log(Math.ceil(12.1));
+        console.log(Math.round(12.2));
+        console.log(Math.round(12.5));
+        console.log(Math.floor(12.9));
+        console.log(Math.random());
+
+        //0~9 사이의 랜덤값 만들기
+        const rVal = parseInt(Math.random() * 10);
+        console.log(rVal)
+
+        //1~9
+        const rVal2 = function result(rVal) {
+            if(rVal === 0) {
+                return 1;
+            }
+            return rVal;
+        }
+        console.log(rVal2(rVal));
+
+        //1~9
+        const rVal3 = parseInt(Math.random() * 9) + 1;
+        console.log(rVal3);
+        //10~20
+        const rVal4 =  parseInt(Math.random() * 11) + 10;
+        console.log(rVal4);
+        //25 ~50
+        const rVal5 = parseInt(Math.random() * 26) + 25;
+        console.log(rVal5);
+        //25~40
+        const rVal6 = parseInt(Math.random() * 16) + 25;
+        console.log(rVal6);
+    </script>
+</body>
+</html>

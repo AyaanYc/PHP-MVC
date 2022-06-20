@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //splice특징 중간에 값을 삭제&추가&교체 가능
+        //push, pop, shift, unshift는 끝이나 처음껏만 가능
+
+        // insert
+        console.log('-----insert-----');
+        let mine = [0, 1, 2, 3];
+        mine.splice(2, 0, 5); //2번자리에 5추가
+        console.log(mine.toString());
+        mine.splice(1, 0, 11, 12); //1번자리에 11, 12 추가
+        console.log(mine.toString());
+
+        // delete 제일 많이사용함
+        console.log('-----delete-----');
+        mine.splice(2, 1); //2번 자리부터 1개 삭제
+        console.log(mine.toString());
+        mine.splice(4, 2); //4번 자리부터 2개 삭제
+        console.log(mine.toString());
+
+        //update
+        console.log('-----update-----');
+        mine.splice(1, 1, 30); //1번 자리 1개 삭제, 30 insert
+        console.log(mine.toString());
+
+        //-----------------------------------------
+
+        //push
+        console.log('-----push-----');
+        const pushArr = [10, 20, 30, 40];
+        console.log(pushArr.toString());
+        pushArr.splice(4, 0, 50); //끝에 50을 추가 4대신 pushArr.length사용가능
+        console.log(pushArr.toString());
+
+        //pop
+        console.log('-----pop-----');
+        const popArr = [10, 20, 30, 40, 50];
+        console.log(popArr.toString());
+        popArr.splice(3, 1); // 끝에 40을 삭제 3대신 pophArr.length -1 사용가능
+        console.log(popArr.toString());
+
+        //unshift
+        console.log('-----unshift-----');
+        const unshiftArr = [10, 20, 30, 40 ,50];
+        console.log(unshiftArr.toString());
+        unshiftArr.splice(0, 0, 60);// 왼쪽 맨 앞에 60을 추가
+        console.log(unshiftArr.toString());
+
+        //shift
+        console.log('-----shift-----');
+        const shiftArr = [10, 20, 30, 40 ,50];
+        console.log(shiftArr.toString());
+        shiftArr.splice(0, 1);// 왼쪽 맨 앞에 있는 값을 삭제
+        console.log(shiftArr.toString());
+        
+    </script>
+</body>
+</html>
