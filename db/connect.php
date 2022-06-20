@@ -22,18 +22,8 @@
     mysqli_query($conn, $sql);
 
     mysqli_close($conn);
-<<<<<<< HEAD
-<<<<<<< HEAD
-?>
-=======
-=======
->>>>>>> 0afd3ce53dc33d1dd3cd5d56313727caa808088a
 ?>
 <!-- 
     select - 최대 1개 가져오는것!! 0,1개(배열) detail where절pk있음
     select - 여러개!! 0, 1, 2 => 배열(배열) list where절pk없음
 -->
-<<<<<<< HEAD
->>>>>>> 0afd3ce53dc33d1dd3cd5d56313727caa808088a
-=======
->>>>>>> 0afd3ce53dc33d1dd3cd5d56313727caa808088a
