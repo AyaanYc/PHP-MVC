@@ -1,5 +1,5 @@
 <?php
-namespace application\controllers;
+namespace application\controllers; //같은namespace는 use를 안써도 같은공간이라서 사용가능
 use application\models\UserModel;
 
 class UserController extends Controller {

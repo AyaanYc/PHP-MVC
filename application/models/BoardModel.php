@@ -48,7 +48,7 @@ class BoardModel extends Model {
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':title', $param["title"]);
         $stmt->bindValue(':ctnt', $param["ctnt"]);
-        $stmt->bindValue(':i_user', $_SESSION[_LOGINUSER]->i_user);
+        $stmt->bindValue(':i_user', $param["i_user"]);
         $stmt->execute();
     }
 }

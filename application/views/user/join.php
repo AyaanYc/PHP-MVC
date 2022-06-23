@@ -10,7 +10,6 @@
         </div>
         <div>
             <input type="submit" value="회원가입">
-            <a href="login"><input type="button" value="로그인"></a>
         </div>
     </form>
 </div>

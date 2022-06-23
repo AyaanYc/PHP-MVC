@@ -2,7 +2,7 @@
 namespace application\controllers;
 include_once "application/utils/SessionUtils.php";
 
-abstract class Controller {
+abstract class Controller {//abstract는 반드시 상속으로사용
     //생성자 
     public function __construct($action) {   //action=application에서 날라온 2차주소값    
         $view = $this->$action();  //board\list.php   BoardController에 있는 action에 해당하는 메소드호출

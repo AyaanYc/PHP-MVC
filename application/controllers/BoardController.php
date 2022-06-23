@@ -69,8 +69,9 @@ class BoardController extends Controller {
     public function write_proc() {
         $title = $_POST["title"];
         $ctnt = $_POST["ctnt"];
+        $i_user = $_SESSION[_LOGINUSER]->i_user;
         $model = new BoardModel();
-        $param = ["ctnt" => $ctnt, "title" => $title];
+        $param = ["ctnt" => $ctnt, "title" => $title, "i_user" => $i_user];
         $model->insBoard($param);
         return "redirect:list";
     }
