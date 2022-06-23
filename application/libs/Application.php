@@ -10,8 +10,8 @@ class Application{
     public function __construct() {
         $getUrl = '';
         if (isset($_GET['url'])) {
-            $getUrl = rtrim($_GET['url'], '/');
-            $getUrl = filter_var($getUrl, FILTER_SANITIZE_URL);
+            $getUrl = rtrim($_GET['url'], '/');//맨 오른쪽에있는 / 제거
+            $getUrl = filter_var($getUrl, FILTER_SANITIZE_URL);// 특수기호 제거
             //getUrl = 주소값을 올바르게 만듬
         }
         $getParams = explode('/', $getUrl);// /를 기준으로 나누어준다(배열)
@@ -23,7 +23,9 @@ class Application{
             exit();
         }
         $controllerName = 'application\controllers\\' . $controller . 'controller';
-        new $controllerName($action);//부모생성자호출 Controller가 호출됨
+        new $controllerName($action);
+        // new boardcontroller($action);
+        //부모생성자호출 Controller가 호출됨 require_once "action에해당하는 view파일"
     }
 }
 //index.php에서 호출해서 생성자가 실행됨
