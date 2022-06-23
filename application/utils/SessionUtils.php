@@ -12,3 +12,7 @@ function flash($name = '', $val = '') {
         }
     }
 }
+
+function aaaprint() {
+    print "aaa";
+}

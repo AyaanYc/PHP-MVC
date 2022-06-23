@@ -6,7 +6,11 @@
     <?php print "this객체: "; print_r($this); print "<br><br>";?>
     <div>
         <button id="btnDel" data-i_board="<?= $this->data->i_board ?>">삭제</button>
+        <?php 
+        if(isset($_SESSION[_LOGINUSER]->i_user) && isset($this->data->i_user)){
+            if($_SESSION[_LOGINUSER]->i_user===$this->data->i_user) { ?>
         <a href="mod?i_board=<?=$this->data->i_board?>"><button>수정</button></a>
+        <?php }}?>
         <a href="list"><button>리스트</button></a>
     </div>
     <div>글번호: <?=$this->data->i_board?></div>

@@ -1,1 +1,1 @@
-tr:hover { cursor: pointer;}
+td:nth-child(2):hover { cursor: pointer;;}

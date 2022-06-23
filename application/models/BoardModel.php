@@ -13,7 +13,7 @@ class BoardModel extends Model {
     }
     
     public function selBoard(&$param) {
-        $sql = "SELECT A.i_board, A.title, A.ctnt, B.nm, A.created_at  
+        $sql = "SELECT A.i_board, A.title, A.ctnt, B.nm, A.created_at, A.i_user  
                 FROM t_board A 
                 INNER JOIN t_user B 
                 ON A.i_user = B.i_user

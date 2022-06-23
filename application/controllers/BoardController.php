@@ -23,8 +23,12 @@ class BoardController extends Controller {
         //print "i_board : {$i_board}<br>";
         $param = ["i_board" => $i_board];
         $this->addAttribute("data", $model->selBoard($param));
+        $this->addAttribute(_TITLE, "디테일");
+        $this->addAttribute(_HEADER, $this->getView("template/header.php"));
+        $this->addAttribute(_MAIN, $this->getView("board/detail.php"));
+        $this->addAttribute(_FOOTER, $this->getView("template/footer.php"));
         $this->addAttribute("js", ["board/detail"]);//배열로 들어감
-        return "board/detail.php";
+        return "template/t1.php"; //view 파일명!!
         //글번호, 제목, 내용, 글쓴이 이름, 작성일
     }
 
