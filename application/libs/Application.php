@@ -22,7 +22,7 @@ class Application{
             echo "해당 컨트롤러가 존재하지 않습니다.";
             exit();
         }
-        $controllerName = 'application\controllers\\' . $controller . 'controller';
+        $controllerName = 'application\controllers\\' . $controller . 'controller';// 'application\controllers\\'=namespace사용
         new $controllerName($action);
         // new boardcontroller($action);
         //부모생성자호출 Controller가 호출됨 require_once "action에해당하는 view파일"
